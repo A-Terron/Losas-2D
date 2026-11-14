@@ -1,0 +1,6 @@
+# Versiones fijas para que la web del manual se construya igual en el futuro.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-callouts==1.17.1
+mkdocs-redirects==1.2.3
+pymdown-extensions==12.3

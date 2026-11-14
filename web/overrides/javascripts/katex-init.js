@@ -1,0 +1,12 @@
+// Renderiza las fórmulas $...$ y $$...$$ del manual con KaTeX (también al navegar sin recargar).
+document$.subscribe(({ body }) => {
+  renderMathInElement(body, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "$", right: "$", display: false },
+      { left: "\\(", right: "\\)", display: false },
+      { left: "\\[", right: "\\]", display: true }
+    ],
+    throwOnError: false
+  });
+});

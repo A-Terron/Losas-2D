@@ -1,0 +1,19 @@
+# Material con derechos de autor: no se publica
+Bibliografía/
+*.pdf
+*.mp4
+
+# Modelos de ETABS: se guardan fuera del repositorio
+HT1 - SHELLS/
+
+# Salida de la construcción local del manual
+_site/
+site/
+__pycache__/
+
+# Obsidian y sistema
+.obsidian/
+.trash/
+.DS_Store
+Thumbs.db
+desktop.ini

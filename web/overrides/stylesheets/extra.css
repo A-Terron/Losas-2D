@@ -1,0 +1,5 @@
+/* Figuras SVG del manual: centradas, ancho completo y fondo claro en modo oscuro */
+.md-typeset img[src$=".svg"] { display: block; margin: 1rem auto; max-width: 100%; height: auto; }
+[data-md-color-scheme="slate"] .md-typeset img[src$=".svg"] { background: #fff; border-radius: 4px; padding: 6px; }
+.md-typeset table:not([class]) { font-size: .72rem; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: .2rem 0; }

@@ -1,0 +1,74 @@
+# Configuración de la versión web del manual (se construye sola en GitHub Actions).
+# La fuente es la carpeta manual/, que es la misma bóveda de Obsidian.
+site_name: Manual · Losas 2D (ACI 318-19)
+site_url: https://a-terron.github.io/Losas-2D/manual/
+repo_url: https://github.com/A-Terron/Losas-2D
+repo_name: A-Terron/Losas-2D
+edit_uri: edit/main/manual/
+docs_dir: manual
+site_dir: _site/manual
+use_directory_urls: true
+exclude_docs: |
+  .obsidian/
+  .trash/
+
+theme:
+  name: material
+  language: es
+  custom_dir: web/overrides
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle: {icon: material/weather-night, name: Modo oscuro}
+    - scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle: {icon: material/weather-sunny, name: Modo claro}
+
+plugins:
+  - search:
+      lang: es
+  - callouts
+  - redirects:
+      redirect_maps:
+        index.md: 00 Inicio.md
+
+hooks:
+  - web/obsidian_hook.py
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - vendor/mermaid.min.js
+  - vendor/katex/katex.min.js
+  - vendor/katex/contrib/auto-render.min.js
+  - javascripts/katex-init.js
+extra_css:
+  - vendor/katex/katex.min.css
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+  version: v1.0          # se actualiza con cada versión (ver CHANGELOG.md)
+  hoja_url: https://a-terron.github.io/Losas-2D/
