@@ -1,5 +1,5 @@
-# Publica la hoja y la versión web del manual en GitHub Pages en cada push a main.
-name: Publicar hoja y manual
+# Publica las dos hojas y la versión web de sus manuales en GitHub Pages en cada push a main.
+name: Publicar hojas y manuales
 
 on:
   push:
@@ -27,13 +27,17 @@ jobs:
           cache-dependency-path: web/requirements.txt
       - name: Instalar MkDocs
         run: pip install -r web/requirements.txt
-      - name: Construir el manual (falla si hay enlaces rotos)
+      - name: Construir los dos manuales (falla si hay enlaces rotos)
         env:
           DISABLE_MKDOCS_2_WARNING: "true"
-        run: mkdocs build --strict
-      - name: Copiar la hoja como página principal
+        run: |
+          mkdocs build --strict
+          mkdocs build --strict -f mkdocs-u.yml
+      - name: Copiar las hojas (Losas 2D en la raíz, Losas 2D U en /u/)
         run: |
           cp "Losas 2D - ACI 318-19.html" _site/index.html
+          mkdir -p _site/u
+          cp "Losas 2D U - ACI 318-19.html" _site/u/index.html
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

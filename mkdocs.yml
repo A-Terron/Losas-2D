@@ -70,5 +70,5 @@ extra_css:
 
 extra:
   generator: false
-  version: v1.0          # se actualiza con cada versión (ver CHANGELOG.md)
+  version: v1.1          # se actualiza con cada versión (ver CHANGELOG.md)
   hoja_url: https://a-terron.github.io/Losas-2D/

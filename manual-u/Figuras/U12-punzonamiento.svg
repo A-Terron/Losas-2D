@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" font-family="Arial, sans-serif" font-size="12">
+  <rect width="640" height="260" fill="#ffffff"/>
+  <g text-anchor="middle" fill="#151e28" font-weight="bold"><text x="110" y="24">Columna interior</text><text x="320" y="24">Columna de borde</text><text x="530" y="24">Columna de esquina</text></g>
+  <g fill="#eef2f5" stroke="#b9c3cc"><rect x="20" y="40" width="180" height="160"/><rect x="230" y="40" width="180" height="160"/><rect x="440" y="40" width="180" height="160"/></g>
+  <g fill="#2a2522"><rect x="90" y="100" width="40" height="40"/><rect x="230" y="100" width="40" height="40"/><rect x="440" y="40" width="40" height="40"/></g>
+  <g fill="none" stroke="#b42318" stroke-width="2.5" stroke-dasharray="7 4">
+    <rect x="74" y="84" width="72" height="72"/>
+    <path d="M230 84h56v72h-56"/>
+    <path d="M496 40v56h-56"/>
+  </g>
+  <g stroke="#234e7a" fill="none"><path d="M130 170h16m-16-4v8m16-8v8"/></g>
+  <g text-anchor="middle" fill="#4a5765">
+    <text x="138" y="188" fill="#234e7a">d/2</text>
+    <text x="110" y="222">b o = 2(c1 + d) + 2(c2 + d)</text><text x="110" y="240">α s = 40</text>
+    <text x="320" y="222">b o = 2(c1 + d/2) + (c2 + d)</text><text x="320" y="240">α s = 30</text>
+    <text x="530" y="222">b o = (c1 + d/2) + (c2 + d/2)</text><text x="530" y="240">α s = 20</text>
+    <text x="216" y="124" transform="rotate(-90 216 124)">borde de losa</text><text x="530" y="34" font-weight="normal"> </text>
+  </g>
+</svg>

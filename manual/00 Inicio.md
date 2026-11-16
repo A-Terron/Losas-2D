@@ -11,6 +11,9 @@ Este manual explica, paso a paso, todo lo que calcula la hoja **`Losas 2D - ACI 
 > - **Notas de concepto.** Notas cortas, una por idea o fórmula (por ejemplo [[Rigidez relativa alfa f]] o [[Inercia efectiva Ie]]). Las secciones enlazan a ellas; sirven para repasar una sola cosa.
 > - **Figuras.** Los esquemas están en la carpeta `Figuras` y aparecen incrustados en las notas.
 
+> [!tip] ¿Un solo tablero?
+> La hoja **Losas 2D U** resuelve una losa aislada, en una o en dos direcciones, con los mismos métodos. Tiene su propio manual: [Manual de Losas 2D U](https://a-terron.github.io/Losas-2D/manual-u/).
+
 ## Empieza aquí
 
 1. [[01 Diagrama de flujo general]] — el recorrido completo del diseño en una sola vista.

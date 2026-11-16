@@ -9,6 +9,8 @@ Hoja de cálculo interactiva para analizar, diseñar y verificar **losas macizas
 
 ### [▶ Abrir la hoja interactiva](https://a-terron.github.io/Losas-2D/) · [📖 Leer el manual](https://a-terron.github.io/Losas-2D/manual/)
 
+### [▶ Abrir Losas 2D U (losa universal)](https://a-terron.github.io/Losas-2D/u/) · [📖 Manual de Losas 2D U](https://a-terron.github.io/Losas-2D/manual-u/)
+
 ![Hoja interactiva: datos de materiales a la izquierda; resumen de verificaciones y planta con franjas a la derecha](web/img/hoja-interactiva.png)
 
 ---
@@ -19,6 +21,8 @@ Hoja de cálculo interactiva para analizar, diseñar y verificar **losas macizas
 |---|---|---|---|
 | **Hoja de cálculo** | [abrir](https://a-terron.github.io/Losas-2D/) | [`Losas 2D - ACI 318-19.html`](Losas%202D%20-%20ACI%20318-19.html) | 12 secciones, de materiales a detallado, con gráficos, unidades intercambiables y resumen de verificaciones. |
 | **Manual técnico** | [leer](https://a-terron.github.io/Losas-2D/manual/) | [`manual/`](manual/) | Una nota por sección de la hoja (S01–S12), 58 notas de concepto, 33 figuras, diagramas de flujo, verificación de fórmulas y resultados de la HT1. |
+| **Hoja Losas 2D U** | [abrir](https://a-terron.github.io/Losas-2D/u/) | [`Losas 2D U - ACI 318-19.html`](Losas%202D%20U%20-%20ACI%20318-19.html) | Losa universal de un tablero: una o dos direcciones, DDM y EFM, punzonamiento, 14 secciones paso a paso. |
+| **Manual de Losas 2D U** | [leer](https://a-terron.github.io/Losas-2D/manual-u/) | [`manual-u/`](manual-u/) | 14 notas de sección, 19 de concepto, diagramas de flujo, validación y ejemplos resueltos. |
 | **Versiones** | — | [`CHANGELOG.md`](CHANGELOG.md) · [Releases](https://github.com/A-Terron/Losas-2D/releases) | Qué cambió en cada versión; cada release trae la hoja y el manual listos para descargar. |
 
 ## Qué hace la hoja
@@ -30,6 +34,28 @@ Hoja de cálculo interactiva para analizar, diseñar y verificar **losas macizas
 - **Diseño:** acero por franja con barra y separación en múltiplos de 2.5 cm, cortante en una dirección, deflexiones inmediata y de largo plazo, y detallado (longitudes de desarrollo, ganchos, empalmes, bastones y refuerzo de esquina).
 - **Verificación:** modelo de placa por elementos finitos y comparación con ETABS.
 - **Unidades:** cambiar las unidades de datos o resultados no altera el cálculo.
+
+## Losas 2D U · losa universal de un tablero
+
+![Losas 2D U: datos del tablero a la izquierda; resumen de verificaciones y planta con franjas a la derecha](web/img/hoja-u.png)
+
+**Losas 2D U** resuelve **un solo tablero**. Se describe el tablero, el apoyo de cada uno de sus cuatro bordes y sus tableros vecinos, y la hoja:
+
+- **Clasifica** la losa: una dirección (apoyo en dos lados opuestos, o en los cuatro con relación de claros mayor que 2) o dos direcciones.
+- **Detecta los casos** de dos direcciones que Losas 2D obtiene de la retícula: posición del tablero, sistema de piso, tabla de espesor mínimo y caso del claro extremo.
+- **Dos direcciones:** Método de Diseño Directo, Marco Equivalente y envolvente, sobre el marco que forman el tablero y sus vecinos.
+- **Una dirección:** ACI 318-19 Cap. 7 con los coeficientes de §6.5 y acero de retracción y temperatura.
+- **Apoyos:** vigas, muros de concreto o mampostería, columnas sin viga o borde libre, borde por borde.
+- **Punzonamiento** en columnas sin viga (ACI 22.6), con transferencia de momento.
+- **Comparación:** los 9 tableros de la HT1 vienen precargados; resueltos uno por uno dan los mismos momentos, acero, espesor y deflexiones que el modelo completo, con cualquiera de los tres métodos.
+
+| | Losas 2D | Losas 2D U |
+|---|---|---|
+| Geometría | Retícula de 3 × 3 tableros | Un tablero con sus vecinos |
+| Una dirección | — | Sí |
+| DDM, EFM y envolvente | Sí | Sí |
+| Punzonamiento | — | Sí |
+| Elementos finitos y ETABS | Sí | — |
 
 ## Cómo usarla
 
@@ -55,7 +81,7 @@ Todos los valores intermedios están en [Ejemplo HT1 · resultados](https://a-te
 
 ## Usar el manual en Obsidian
 
-La carpeta [`manual/`](manual/) es la misma bóveda de Obsidian (enlaces `[[...]]`, callouts y figuras incrustadas). Descarga el repositorio o el `.zip` del último [release](https://github.com/A-Terron/Losas-2D/releases) y abre `manual/` como bóveda, o cópiala dentro de la tuya.
+Las carpetas [`manual/`](manual/) y [`manual-u/`](manual-u/) son bóvedas de Obsidian (una por hoja). [`manual/`](manual/) es la misma bóveda de Obsidian (enlaces `[[...]]`, callouts y figuras incrustadas). Descarga el repositorio o el `.zip` del último [release](https://github.com/A-Terron/Losas-2D/releases) y abre `manual/` como bóveda, o cópiala dentro de la tuya.
 
 La versión web se genera sola a partir de esa carpeta: no hay que editar dos copias.
 
@@ -68,8 +94,8 @@ El repositorio sigue [versionado semántico](https://semver.org/lang/es/) simpli
 
 Para publicar una versión nueva:
 
-1. Reemplazar `Losas 2D - ACI 318-19.html` y/o los archivos de `manual/` (mismos nombres).
-2. Anotar los cambios en [`CHANGELOG.md`](CHANGELOG.md) y subir `version` en `mkdocs.yml`.
+1. Reemplazar `Losas 2D - ACI 318-19.html`, `Losas 2D U - ACI 318-19.html` y/o los archivos de `manual/` o `manual-u/` (mismos nombres).
+2. Anotar los cambios en [`CHANGELOG.md`](CHANGELOG.md) y subir `version` en `mkdocs.yml` y `mkdocs-u.yml`.
 3. Hacer commit en `main` y crear la etiqueta (`git tag v1.1`) con su release.
 
 Cada push a `main` vuelve a publicar la hoja y el manual en GitHub Pages ([flujo](.github/workflows/pages.yml)). Si el manual tiene un enlace roto, la publicación se detiene y la versión anterior sigue en línea.
@@ -78,28 +104,32 @@ Cada push a `main` vuelve a publicar la hoja y el manual en GitHub Pages ([flujo
 
 ```text
 ├── Losas 2D - ACI 318-19.html   Hoja de cálculo (se publica como página principal)
+├── Losas 2D U - ACI 318-19.html Hoja universal de un tablero (se publica en /u/)
 ├── manual/                      Manual técnico = bóveda de Obsidian
 │   ├── 00 Inicio.md … 04 …      Índice, flujo general, notación, verificación, ejemplo HT1
 │   ├── Secciones/               S01–S12, una nota por sección de la hoja
 │   ├── Conceptos/               Notas cortas, una por idea o fórmula
 │   └── Figuras/                 Esquemas SVG
-├── web/                         Configuración de la versión web del manual
+├── manual-u/                    Manual de Losas 2D U (misma estructura; S01–S14)
+├── web/                         Configuración de la versión web de los manuales
 │   ├── obsidian_hook.py         Convierte [[enlaces]] y ![[figuras]] al construir
 │   ├── overrides/               Estilos, KaTeX y Mermaid incluidos
 │   ├── requirements.txt         Versiones fijas de MkDocs
 │   └── img/                     Capturas del README
-├── mkdocs.yml
+├── mkdocs.yml                   Manual de Losas 2D
+├── mkdocs-u.yml                 Manual de Losas 2D U
 ├── .github/workflows/pages.yml  Publicación automática en GitHub Pages
 ├── CHANGELOG.md
 └── LICENSE
 ```
 
-Para ver el manual web en tu PC: `pip install -r web/requirements.txt` y luego `mkdocs serve`.
+Para ver el manual web en tu PC: `pip install -r web/requirements.txt` y luego `mkdocs serve` (o `mkdocs serve -f mkdocs-u.yml` para el de Losas 2D U).
 
 ## Alcance y limitaciones
 
 - Losas macizas con tableros rectangulares y cargas de gravedad uniformes.
-- **No** diseña vigas ni columnas y **no** revisa punzonamiento (el enunciado del proyecto lo excluye).
+- **No** diseña vigas ni columnas. Losas 2D **no** revisa punzonamiento (el enunciado del proyecto lo excluye); Losas 2D U sí, en columnas sin viga.
+- Losas 2D U no cubre tableros con tres lados apoyados y uno libre, ni refuerzo de cortante.
 - Los elementos finitos son solo una verificación; el diseño se hace con DDM y EFM.
 
 ## Aviso
@@ -109,4 +139,4 @@ Es una herramienta educativa del curso de Estructuras de Concreto Reforzado. Ant
 ## Licencia
 
 - **Código** (hoja HTML y `web/`): [MIT](LICENSE).
-- **Manual y figuras** (`manual/`): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es). Los datos del enunciado pertenecen al curso.
+- **Manual y figuras** (`manual/` y `manual-u/`): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es). Los datos del enunciado pertenecen al curso.
